@@ -7,7 +7,6 @@
 
 module.exports = function (connect) {
   
-  var _ = require("underscore");
   var Store = connect.session.Store;
 
   function DDBSessionStore (opts) {
@@ -23,7 +22,8 @@ module.exports = function (connect) {
         t.ddb.scan(t.table, fopts, function (err, res) {
           if (!err && res.count) {
             var batch = {};
-            batch[t.table] = _.pluck(res.items, t.pk);
+            var items = batch[t.table] = [];
+            for (var item in res.items) items.push(item[t.pk]);
             t.ddb.batchWriteItem(null, batch, function (err, res) {});
           }
         });
