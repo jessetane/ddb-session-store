@@ -1,6 +1,6 @@
 {
   "name"          : "ddb-session-store",
-  "description"   : "A DynamoDB backed session store for use with connect.session",
+  "description"   : "A node-dynamodb backed session store for use with connect.session",
   "author"        : "Jesse Tane <jesse.tane@gmail.com>",
   "main"          : "ddb-session-store.js",
   "version"       : "0.0.1"
