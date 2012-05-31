@@ -1,0 +1,1 @@
+A DynamoDB backed session store for use with connect.session
